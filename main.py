@@ -1,7 +1,7 @@
-from init_rover import init_rover
-from move_forWard import move_forward
-from move_bAckWard import move_backward
-from display_grid import display_grid
+from entities.init_rover import init_rover
+from utils.move_forWard import move_forward
+from utils.move_bAckWard import move_backward
+from entities.display_grid import display_grid
 
 
 if __name__ == "__main__":
