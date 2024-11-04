@@ -2,8 +2,8 @@ from utils.Orientation import Orientation
 
 class Rover:
     def __init__(self, position, orientation: Orientation):
-        self.position = position  # Un dictionnaire avec 'x' et 'y'
-        self.orientation = orientation  # Instance de la classe Orientation
+        self.position = position 
+        self.orientation = orientation 
 
     def set_orientation(self, orientation: Orientation):
         self.orientation = orientation
