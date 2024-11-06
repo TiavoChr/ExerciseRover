@@ -5,7 +5,7 @@ from utils.Orientation import South
 from utils.Orientation import East
 from utils.Orientation import West
 
-def init_rover(x_start, y_start, initial_orientation, grid_size=30):
+def init_rover(x_start: int, y_start: int, initial_orientation: str, grid_size: int = 30):
     # init de la planete
     planet = Planet(grid_size)
 
