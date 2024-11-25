@@ -103,7 +103,7 @@ python -m src.__main__
 
 Exemple de sortie en console avec obstacles :
 
-<img src="image.png" alt="Image illustrative d'exemple d'output en console avec obstacles" width="600" />
+<img src="docs/illustrations/output_sans_obstacles.png" alt="Image illustrative d'exemple d'output en console avec obstacles" width="600" />
 
 ### Légende
 - `R` : Représente le Rover.
