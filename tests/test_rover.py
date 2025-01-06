@@ -1,29 +1,26 @@
 import pytest
-from entities.Rover import Rover
-from utils.Orientation import North, South, East, West
+from rover_core.rover import Rover
+from rover_core.planet import Planet
 
 @pytest.fixture
-def initial_position():
-    return {'x': 5, 'y': 5}
+def planet():
+    planet = Planet(grid_size=10)
+    planet.add_obstacle(3, 3)
+    return planet
 
-def test_rover_initialization(initial_position):
-    rover = Rover(initial_position, North())
-    assert rover.get_position() == {'x': 5, 'y': 5}
-    assert isinstance(rover.get_orientation(), North)
+@pytest.fixture
+def rover():
+    return Rover(position={'x': 2, 'y': 3}, orientation='N')
 
-def test_rover_move_forward(initial_position):
-    rover = Rover(initial_position, North())
-    rover.orientation.move_forward(rover.get_position())
-    assert rover.get_position() == {'x': 5, 'y': 6}
+def test_rover_initial_position(rover):
+    assert rover.get_position() == {'x': 2, 'y': 3}
+    assert rover.get_orientation() == 'N'
 
-def test_rover_move_backward(initial_position):
-    rover = Rover(initial_position, North())
-    rover.orientation.move_backward(rover.get_position())
-    assert rover.get_position() == {'x': 5, 'y': 4}
+def test_rover_move_forward_no_obstacle(rover, planet):
+    rover.move_forward(planet)
+    assert rover.get_position() == {'x': 2, 'y': 4}
 
-def test_rover_change_orientation(initial_position):
-    rover = Rover(initial_position, North())
-    rover.set_orientation(East())
-    assert isinstance(rover.get_orientation(), East)
-    rover.orientation.move_forward(rover.get_position())
-    assert rover.get_position() == {'x': 6, 'y': 5}
+def test_rover_obstacle(rover, planet):
+    rover.position = {'x': 3, 'y': 2}  # Juste avant un obstacle
+    rover.move_forward(planet)
+    assert rover.get_position() == {'x': 3, 'y': 2}  # Le mouvement doit être bloqué
