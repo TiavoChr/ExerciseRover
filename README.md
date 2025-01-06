@@ -4,7 +4,7 @@
 
 Ce projet a été réalisé dans le cadre du module **Architecture Logicielle** et illustre les principes fondamentaux de conception et d'organisation d'un logiciel modulaire, extensible et maintenable. Le Rover est une simulation d'un robot capable de se déplacer sur une grille toroïdale, d'éviter des obstacles, et de recevoir des commandes locales ou distantes.
 
-Le projet met en œuvre des concepts clés comme :
+Le projet met en œuvre :
 - **Séparation des responsabilités** : Logique métier et présentation distinctes.
 - **Architecture modulaire** : Une organisation claire des fichiers pour une meilleure lisibilité et évolutivité.
 - **Tests unitaires** : Assurer la robustesse et la fiabilité du code.
