@@ -1,3 +1,9 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
+from rover_core.rover import Rover
+from rover_core.planet import Planet
 from rover_core.movement import rotate_orientation
 
 def test_rotate_left():
